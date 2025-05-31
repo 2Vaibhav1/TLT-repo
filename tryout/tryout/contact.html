@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Old Clothes Emporium</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="1st.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color:  #088178;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #088178;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6bb6b1;
+        }
+
+    #imagePreview {
+      max-width: 100%;
+      max-height: 200px;
+      margin-bottom: 16px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <section id="header">
+    <a href="#"><img src="lo.png" class="logo28" alt="" height="100px" width="150px"></a>
+    <div>
+        <ul id="navbar">
+            <li><a class="active" href="1st.html">Home</a></li>
+            <li><a href="loginpage.html">Login/Signup</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+        </ul>
+    </div>
+</section>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <main>
+    <form id="contactForm" action="thankyou.html">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*">
+      <div id="imagePreview"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Form submitted!'); // You can replace this with your own logic
+
+      // Additional logic for form submission, e.g., sending data to the server
+    });
+
+    document.getElementById('image').addEventListener('change', function(event) {
+      showImagePreview(event.target);
+    });
+
+    function showImagePreview(input) {
+      const preview = document.getElementById('imagePreview');
+      preview.innerHTML = '';
+
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          const image = document.createElement('img');
+          image.src = e.target.result;
+          preview.appendChild(image);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+<footer class="section-p1">
+  <div class="col">
+  <img class="logo" src="###" alt="">
+  <h4>Contact</h4>
+  <p><strong>Address: </strong>562 80-feet road, Kanpur, Uttar Pradesh, India </p>
+  <p><strong>Phone: </strong> +91 45892 XXXXX / +91 12004 XXXXX</p>
+  <p><strong>Hours: </strong>+10:00 - 18:00,Mon - Sat</p>
+  <div class="icon">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest-p"></i>
+      <i class="fab fa-youtube"></i>
+  </div>
+</div>
+
+  <div class="col">
+      <h4>About</h4>
+      <a href="about.html">About Us</a>
+      <a href="#">Delivery information</a>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms and condition</a>
+      <a href="contact.html">Contact us</a>
+  </div>
+
+  <div class="col">
+      <h4>My Account</h4>
+      <a href="loginpage.html">Sign In</a>
+      <a href="cart.html">View cart</a>
+      <a href="cart.html">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="contact.html">Help</a>
+  </div>
+  <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+          <img src="###" alt="">
+          <img src="###" alt="">
+      </div>
+      <p>Secured Payement Gateways </p>
+      <img src="###" alt="">
+  </div>
+  <div class="copyright">
+      <p>2024, shop etc - HTML CSS E-commerce Website</p>
+  </div>
+    </footer>
+</body>
+</html>
